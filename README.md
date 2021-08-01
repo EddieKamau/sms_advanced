@@ -2,8 +2,6 @@
 
 This is an SMS library for Flutter.
 
-**It only supports Android for now.** iOS and MMS is not in the scope of this project.
-
 ## Getting Started
 
 
@@ -214,17 +212,18 @@ SmsRemover smsRemover = SmsRemover();
 
 ## Roadmap
 
-- [x] SMS Receiver
-- [x] SMS Sender
-- [x] SMS Delivery
-- [x] SMS Query
-- [x] SMS Thread
-- [x] Contact
-- [x] Contact Photo (full size, thumbnail)
-- [x] User profile (basic info)
-- [x] SMS Delete One-by-one
+|                                      | IOS     | Android |
+|--------------------------------------|---------|---------|
+| SMS Sender                           | &check; | &check; |
+| SMS Receiver                         |         | &check; |
+| SMS Delivery                         |         | &check; |
+| SMS Query                            |         | &check; |
+| SMS Thread                           |         | &check; |
+| Contact                              |         | &check; |
+| Contact Photo (full size, thumbnail) |         | &check; |
+| User profile (basic info)            |         | &check; |
+| SMS Delete One-by-one                |         | &check; |
 
-MMS and iOS is not in the scope of this project. If someone wants to add the code and make a merge request for it, I am happy to include it.
 
 
 
