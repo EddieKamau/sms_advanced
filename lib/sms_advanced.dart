@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:sms_advanced/contact.dart';
 
@@ -331,8 +333,19 @@ class SmsSender {
       map['simCard'] = simCard.imei;
     }
 
-    await _channel.invokeMethod("sendSMS", map);
-    msg.date = DateTime.now();
+    if(!kIsWeb && Platform.isIOS){
+      final mapData = <dynamic, dynamic>{
+        "message": map['body'],
+        "recipients": [map['address']],
+      };
+      await _channel.invokeMethod("sendSMS", mapData);
+      msg.date = DateTime.now();
+    }else{
+      await _channel.invokeMethod("sendSMS", map);
+      msg.date = DateTime.now();
+    }
+
+    
 
     return msg;
   }
