@@ -333,19 +333,17 @@ class SmsSender {
       map['simCard'] = simCard.imei;
     }
 
-    if(!kIsWeb && Platform.isIOS){
+    if (!kIsWeb && Platform.isIOS) {
       final mapData = <dynamic, dynamic>{
         "message": map['body'],
         "recipients": [map['address']],
       };
       await _channel.invokeMethod("sendSMS", mapData);
       msg.date = DateTime.now();
-    }else{
+    } else {
       await _channel.invokeMethod("sendSMS", map);
       msg.date = DateTime.now();
     }
-
-    
 
     return msg;
   }
