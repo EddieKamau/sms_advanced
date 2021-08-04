@@ -37,12 +37,12 @@ class SmsAdvancedPlugin extends PlatformInterface {
     final pluginInstance = SmsAdvancedPlugin();
     channel.setMethodCallHandler(pluginInstance.handleMethodCall);
   }
-  
 
   Future<dynamic> handleMethodCall(MethodCall call) async {
     switch (call.method) {
       case 'sendSMS':
-        return sendSMS(call.arguments['address'].toString(), call.arguments['body'].toString());
+        return sendSMS(call.arguments['address'].toString(),
+            call.arguments['body'].toString());
       default:
         throw PlatformException(
           code: 'Unimplemented',
@@ -51,12 +51,10 @@ class SmsAdvancedPlugin extends PlatformInterface {
     }
   }
 
-
   String get separator => isCupertino() ? "&" : "?";
   Future sendSMS(String address, String body) async {
     final _body = Uri.encodeComponent(body);
     return launch('sms:$address${separator}body=$_body');
-       
   }
 }
 
