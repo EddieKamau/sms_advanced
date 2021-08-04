@@ -7,7 +7,7 @@ This is an SMS library for Flutter.
 
 ### Installation and Usage
 
-Once you're familiar with Flutter you may install this package adding `sms_advanced` (1.0.0 or higher) to the dependencies list of the `pubspec.yaml` file as follow:
+Once you're familiar with Flutter you may install this package adding `sms_advanced` (1.0.1 or higher) to the dependencies list of the `pubspec.yaml` file as follow:
 
 ```yaml
 ...
@@ -15,7 +15,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  sms_advanced: ^1.0.0
+  sms_advanced: ^1.0.1
 ...
 ```
 
@@ -212,17 +212,17 @@ SmsRemover smsRemover = SmsRemover();
 
 ## Roadmap
 
-|                                      | IOS     | Android |
-|--------------------------------------|---------|---------|
-| SMS Sender                           | &check; | &check; |
-| SMS Receiver                         |         | &check; |
-| SMS Delivery                         |         | &check; |
-| SMS Query                            |         | &check; |
-| SMS Thread                           |         | &check; |
-| Contact                              |         | &check; |
-| Contact Photo (full size, thumbnail) |         | &check; |
-| User profile (basic info)            |         | &check; |
-| SMS Delete One-by-one                |         | &check; |
+|                                      | IOS     | Web     | Android |
+|--------------------------------------|---------|---------|---------|
+| SMS Sender                           | &check; | &check; | &check; |
+| SMS Receiver                         |         |         | &check; |
+| SMS Delivery                         |         |         | &check; |
+| SMS Query                            |         |         | &check; |
+| SMS Thread                           |         |         | &check; |
+| Contact                              |         |         | &check; |
+| Contact Photo (full size, thumbnail) |         |         | &check; |
+| User profile (basic info)            |         |         | &check; |
+| SMS Delete One-by-one                |         |         | &check; |
 
 
 

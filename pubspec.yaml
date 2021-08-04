@@ -1,6 +1,8 @@
 name: sms_advanced
-description: This is an SMS library for Flutter. Its allow to send, receive, query sms messages, sms delivery and query contacts info in Android, and only sending in IOS.
-version: 1.0.0
+description: This is an SMS library for Flutter. Its allow to send, receive,
+  query sms messages, sms delivery and query contacts info in Android, and only
+  sending in IOS & Web.
+version: 1.0.1
 homepage: https://github.com/EddieKamau/sms_advanced
 
 environment:
@@ -10,6 +12,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.1
+  url_launcher: ^6.0.9
 
 dev_dependencies:
   flutter_test:
@@ -28,5 +34,6 @@ flutter:
         pluginClass: SmsAdvancedPlugin
       ios:
         pluginClass: UssdAdvancedPlugin
-
-
+      web:
+        pluginClass: SmsAdvancedPlugin
+        fileName: sms_advanced_web.dart
