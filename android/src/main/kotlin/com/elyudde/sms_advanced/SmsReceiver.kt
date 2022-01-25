@@ -34,7 +34,7 @@ internal class SmsReceiver(val context: Context, private val binding: ActivityPl
     private var sink: EventSink? = null
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
-    override fun onListen(arguments: Any, events: EventSink) {
+    override fun onListen(arguments: Any?, events: EventSink) {
         receiver = createSmsReceiver(events)
         context
             .registerReceiver(receiver, IntentFilter(Telephony.Sms.Intents.SMS_RECEIVED_ACTION))
@@ -42,7 +42,7 @@ internal class SmsReceiver(val context: Context, private val binding: ActivityPl
         permissions.checkAndRequestPermission(permissionsList, Permissions.RECV_SMS_ID_REQ)
     }
 
-    override fun onCancel(o: Any) {
+    override fun onCancel(o: Any?) {
         context.unregisterReceiver(receiver)
         receiver = null
     }
