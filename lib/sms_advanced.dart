@@ -33,7 +33,7 @@ class SmsMessage implements Comparable<SmsMessage> {
   DateTime? _date;
   DateTime? _dateSent;
   SmsMessageKind? _kind;
-  SmsMessageState _state = SmsMessageState.None;
+  SmsMessageState? _state = SmsMessageState.None;
   final StreamController<SmsMessageState> _stateStreamController =
       StreamController<SmsMessageState>();
 
@@ -148,7 +148,7 @@ class SmsMessage implements Comparable<SmsMessage> {
   set date(DateTime? date) => _date = date;
 
   /// Get message state
-  SmsMessageState get state => _state;
+  SmsMessageState get state => _state ?? SmsMessageState.None;
 
   set state(SmsMessageState state) {
     if (_state != state) {
