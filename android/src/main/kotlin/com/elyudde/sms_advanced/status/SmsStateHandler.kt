@@ -23,7 +23,7 @@ class SmsStateHandler(val context: Context, private val binding: ActivityPluginB
     private var smsStateChangeReceiver: BroadcastReceiver? = null
     private val permissions: Permissions
     var eventSink: EventSink? = null
-    override fun onListen(o: Any?, eventSink: EventSink?) {
+    override fun onListen(argument: Any?, eventSink: EventSink) {
         this.eventSink = eventSink
         smsStateChangeReceiver = SmsStateChangeReceiver(eventSink)
         if (permissions.checkAndRequestPermission(
@@ -52,7 +52,7 @@ class SmsStateHandler(val context: Context, private val binding: ActivityPluginB
         )
     }
 
-    override fun onCancel(o: Any) {
+    override fun onCancel(argument: Any?) {
         context.unregisterReceiver(smsStateChangeReceiver)
         smsStateChangeReceiver = null
     }
