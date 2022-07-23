@@ -66,7 +66,7 @@ internal class SmsSenderMethodHandler(
     @TargetApi(Build.VERSION_CODES.KITKAT)
     private fun sendSmsMessage() {
         val sentIntent = Intent("SMS_SENT")
-        sentIntent.putExtra("sentId", sentId)
+        .putExtra("sentId", sentId)
         val sentPendingIntent = PendingIntent.getBroadcast(
             context,
             0,
