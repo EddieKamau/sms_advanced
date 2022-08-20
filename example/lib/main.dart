@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'dart:developer';
 
+import 'package:flutter/material.dart';
 import 'package:sms_advanced/sms_advanced.dart';
 
 void main() {
@@ -23,6 +24,8 @@ class _MyAppState extends State<MyApp> {
     query.getAllThreads.then((value) {
       threads = value;
       setState(() {});
+    }).catchError((e) {
+      log("error fetching sms data", error: e);
     });
   }
 
