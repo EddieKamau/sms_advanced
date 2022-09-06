@@ -16,12 +16,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final SmsQuery query = SmsQuery();
-  List<SmsThread> threads = [];
+  List<SmsMessage> threads = [];
 
   @override
   void initState() {
     super.initState();
-    query.getAllThreads.then((value) {
+    query.getAllSms.then((value) {
       threads = value;
       setState(() {});
     }).catchError((e) {
@@ -48,8 +48,8 @@ class _MyAppState extends State<MyApp> {
                   ListTile(
                     minVerticalPadding: 8,
                     minLeadingWidth: 4,
-                    title: Text(threads[index].messages.last.body ?? 'empty'),
-                    subtitle: Text(threads[index].contact?.address ?? 'empty'),
+                    title: Text(threads[index].toMap.toString() ?? 'empty'),
+                    subtitle: Text(threads[index].sender ?? 'empty'),
                   ),
                   const Divider()
                 ],

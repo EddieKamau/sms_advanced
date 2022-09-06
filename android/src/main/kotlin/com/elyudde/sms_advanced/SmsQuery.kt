@@ -6,7 +6,7 @@ import android.content.pm.PackageManager
 import android.database.Cursor
 import android.net.Uri
 import com.elyudde.sms_advanced.permisions.Permissions
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -147,7 +147,7 @@ internal class SmsQueryHandler(
 }
 
 internal class SmsQuery(val context: Context, private val binding: ActivityPluginBinding) : MethodCallHandler {
-    private val permissions: Permissions = Permissions(context, binding.activity as FlutterActivity)
+    private val permissions: Permissions = Permissions(context, binding.activity as FlutterFragmentActivity)
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         var start = 0
         var count = -1

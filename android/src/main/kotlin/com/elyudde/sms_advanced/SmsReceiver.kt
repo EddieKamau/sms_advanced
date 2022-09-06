@@ -13,7 +13,7 @@ import android.telephony.SmsManager
 import android.telephony.SmsMessage
 import android.util.Log
 import com.elyudde.sms_advanced.permisions.Permissions
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.EventChannel.EventSink
@@ -28,7 +28,7 @@ import java.util.*
 internal class SmsReceiver(val context: Context, private val binding: ActivityPluginBinding) : EventChannel.StreamHandler,
     RequestPermissionsResultListener {
     private var receiver: BroadcastReceiver? = null
-    private val permissions: Permissions = Permissions(context, binding.activity as FlutterActivity)
+    private val permissions: Permissions = Permissions(context, binding.activity as FlutterFragmentActivity)
     private val permissionsList =
         arrayOf(Manifest.permission.RECEIVE_SMS, Manifest.permission.READ_SMS)
     private var sink: EventSink? = null
