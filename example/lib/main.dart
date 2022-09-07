@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:sms_advanced/sms_advanced.dart';
 
@@ -16,16 +14,14 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final SmsQuery query = SmsQuery();
-  List<SmsMessage> threads = [];
+  List<SmsThread> threads = [];
 
   @override
   void initState() {
     super.initState();
-    query.getAllSms.then((value) {
+    query.getAllThreads.then((value) {
       threads = value;
       setState(() {});
-    }).catchError((e) {
-      log("error fetching sms data", error: e);
     });
   }
 
@@ -48,8 +44,8 @@ class _MyAppState extends State<MyApp> {
                   ListTile(
                     minVerticalPadding: 8,
                     minLeadingWidth: 4,
-                    title: Text(threads[index].toMap.toString() ?? 'empty'),
-                    subtitle: Text(threads[index].sender ?? 'empty'),
+                    title: Text(threads[index].messages.last.body ?? 'empty'),
+                    subtitle: Text(threads[index].contact?.address ?? 'empty'),
                   ),
                   const Divider()
                 ],
