@@ -71,7 +71,7 @@ internal class SmsSenderMethodHandler(
             context,
             0,
             sentIntent,
-            PendingIntent.FLAG_MUTABLE
+            PendingIntent.FLAG_IMMUTABLE
         )
         val deliveredIntent = Intent("SMS_DELIVERED")
         deliveredIntent.putExtra("sentId", sentId)
@@ -79,7 +79,7 @@ internal class SmsSenderMethodHandler(
             context,
             UUID.randomUUID().hashCode(),
             deliveredIntent,
-            PendingIntent.FLAG_MUTABLE
+            PendingIntent.FLAG_IMMUTABLE
         )
         val sms: SmsManager = if (subId == null) {
             SmsManager.getDefault()
