@@ -8,7 +8,7 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import com.elyudde.sms_advanced.permisions.Permissions
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.EventChannel.EventSink
@@ -83,7 +83,7 @@ class SmsStateHandler(val context: Context, private val binding: ActivityPluginB
     }
 
     init {
-        permissions = Permissions(context, binding.activity as FlutterActivity)
+        permissions = Permissions(context, binding.activity as FlutterFragmentActivity)
         binding.addRequestPermissionsResultListener(this)
     }
 }

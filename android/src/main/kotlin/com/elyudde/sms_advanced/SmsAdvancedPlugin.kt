@@ -29,25 +29,26 @@ class SmsAdvancedPlugin() : FlutterPlugin, ActivityAware {
   private lateinit var simCardChannel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    context = flutterPluginBinding.applicationContext
 
-    receiveSmsChannel = EventChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/recvSMS", JSONMethodCodec.INSTANCE)
+    this.context = flutterPluginBinding.applicationContext
 
-    smsStatusChannel = EventChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/statusSMS", JSONMethodCodec.INSTANCE)
+    this.receiveSmsChannel = EventChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/recvSMS", JSONMethodCodec.INSTANCE)
 
-    sendSmsChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/sendSMS", JSONMethodCodec.INSTANCE)
+    this.smsStatusChannel = EventChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/statusSMS", JSONMethodCodec.INSTANCE)
 
-    removeSmsChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "elyudde.sms.remove.channel")
+    this.sendSmsChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/sendSMS", JSONMethodCodec.INSTANCE)
 
-    querySmsChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/querySMS", JSONMethodCodec.INSTANCE)
+    this.removeSmsChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "elyudde.sms.remove.channel")
 
-    queryContactChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/queryContact", JSONMethodCodec.INSTANCE)
+    this.querySmsChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/querySMS", JSONMethodCodec.INSTANCE)
 
-    queryContactPhotoChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/queryContactPhoto", StandardMethodCodec.INSTANCE)
+    this.queryContactChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/queryContact", JSONMethodCodec.INSTANCE)
 
-    userProfileChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/userProfile", JSONMethodCodec.INSTANCE)
+    this.queryContactPhotoChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/queryContactPhoto", StandardMethodCodec.INSTANCE)
 
-    simCardChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/simCards", JSONMethodCodec.INSTANCE)
+    this.userProfileChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/userProfile", JSONMethodCodec.INSTANCE)
+
+    this.simCardChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "plugins.elyudde.com/simCards", JSONMethodCodec.INSTANCE)
 
   }
 
