@@ -27,6 +27,7 @@ enum SmsMessageKind {
 class SmsMessage implements Comparable<SmsMessage> {
   int? _id;
   int? _threadId;
+  int? _sim;
   String? _address;
   String? _body;
   bool? _read;
@@ -40,12 +41,14 @@ class SmsMessage implements Comparable<SmsMessage> {
   SmsMessage(this._address, this._body,
       {int? id,
       int? threadId,
+      int? sim,
       bool? read,
       DateTime? date,
       DateTime? dateSent,
       SmsMessageKind? kind}) {
     _id = id;
     _threadId = threadId;
+    _sim = sim;
     _read = read;
     _date = date;
     _dateSent = dateSent;
@@ -65,6 +68,7 @@ class SmsMessage implements Comparable<SmsMessage> {
   SmsMessage.fromJson(Map data) {
     _address = data["address"];
     _body = data["body"];
+    _sim = data["sub_id"];
     if (data.containsKey("_id")) {
       _id = data["_id"];
     }
@@ -93,6 +97,9 @@ class SmsMessage implements Comparable<SmsMessage> {
     }
     if (_body != null) {
       res["body"] = _body;
+    }
+    if (_sim != null) {
+      res["sub_id"] = _sim;
     }
     if (_id != null) {
       res["_id"] = _id;
@@ -126,6 +133,9 @@ class SmsMessage implements Comparable<SmsMessage> {
 
   /// Get message body
   String? get body => _body;
+
+  /// Get Sim recieved the message
+  int? get sim => _sim;
 
   /// Check if message is read
   bool? get isRead => _read;
