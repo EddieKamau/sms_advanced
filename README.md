@@ -68,7 +68,18 @@ With `SmsQuery` you can also get the entire list of conversations:
 ```dart
 List<SmsThread> threads = await query.getAllThreads;
 ```
-
+## extract information
+```dart
+List<SmsThread> threads = await query.getAllThreads;
+  for( var index = num ; index >= threads.length; index-- ) { 
+       String sendernumber = threads[index].contact?.address;
+       String sim = threads[index].messages.first.sim.toString();
+       String message = threads[index].messages.first.body;
+       print('sender number: $sendernumber');
+       print('reciever sim: $sim');
+       print('message: $message');
+   } 
+```
 ## Getting the Contact info
 
 Each conversation thread is related with a Contact. 
