@@ -10,6 +10,6 @@
 
 @implementation SmsAdvancedPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftSmsAdvancedPlugin registerWithRegistrar:registrar];
+  [SmsAdvancedPlugin registerWithRegistrar:registrar];
 }
 @end
