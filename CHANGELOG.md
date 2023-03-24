@@ -1,3 +1,7 @@
+## 1.0.2
+
+* A fix on ios build by @eslamodeh
+* 
 ## 1.0.1
 
 * Added Web implementation
