@@ -2,7 +2,7 @@ name: sms_advanced
 description: This is an SMS library for Flutter. Its allow to send, receive,
   query sms messages, sms delivery and query contacts info in Android, and only
   sending in IOS & Web.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/EddieKamau/sms_advanced
 
 environment:
