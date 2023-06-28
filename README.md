@@ -237,6 +237,39 @@ SmsRemover smsRemover = SmsRemover();
 | SMS Delete One-by-one                |         |         | &check; |
 
 
+## Android Integration
+
+
+### Activity Changes
+
+Note that `sms_advanced` requires the use of a `FragmentActivity` instead of an
+`Activity`. To update your application:
+
+* If you are using `FlutterActivity` directly, change it to
+`FlutterFragmentActivity` in your `AndroidManifest.xml`.
+* If you are using a custom activity, update your `MainActivity.java`:
+
+    ```java
+    import io.flutter.embedding.android.FlutterFragmentActivity;
+
+    public class MainActivity extends FlutterFragmentActivity {
+        // ...
+    }
+    ```
+
+    or MainActivity.kt:
+
+    ```kotlin
+    import io.flutter.embedding.android.FlutterFragmentActivity
+
+    class MainActivity: FlutterFragmentActivity() {
+        // ...
+    }
+    ```
+
+    to inherit from `FlutterFragmentActivity`.
+
+
 
 
 ## Contributions

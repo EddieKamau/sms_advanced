@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Upgraded gradle
+
 ## 1.0.2
 
 * A fix on ios build by @eslamodeh
