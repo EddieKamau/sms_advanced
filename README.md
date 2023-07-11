@@ -48,17 +48,17 @@ List<SmsMessage> messages = await query.getAllSms;
 The method `querySms` from the `SmsQuery` class returns a list of filtered SMS messages that match the supplied parameters. For example, for querying all the SMS messages sent and received, you could this code:
 
 ```dart
-await query.querySms({
+await query.querySms(
     kinds: [SmsQueryKind.Inbox, SmsQueryKind.Sent]
-});
+);
 ```
 
 You can also query all the SMS messages sent and received from a specific contact:
 
 ```dart
-await query.querySms({
+await query.querySms(
     address: getContactAddress()
-});
+);
 ```
 
 ## Getting all Threads Conversations
